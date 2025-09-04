@@ -5,11 +5,16 @@ Console.WriteLine("Welcome to our game!");
 
 Console.WriteLine("Please input the the lower bound value (lower values that could be guessed)? <<");
 string answer = Console.ReadLine();
-int lowerBound = int.Parse(answer);
+int lowerBound = ValidateInput(answer, "Invalid input. please input a proper lower bound value");
+
+
+
+
 
 Console.WriteLine("Please input the the upper bound value (highest values that could be guessed)? <<");
 answer = Console.ReadLine();
-int upperBound = int.Parse(answer);
+int upperBound = ValidateInput(answer, "Invalid input. please input a proper upper bound value");
+
 
 for (int i = 0; i < int.MaxValue; i++)
 {
@@ -25,7 +30,7 @@ for (int i = 0; i < int.MaxValue; i++)
     {
         Console.WriteLine($"Please guess a number between {lowerBound} and {upperBound}: ");
         string usersGuests = Console.ReadLine();
-        guess = int.Parse(usersGuests);
+        guess = ValidateInput(answer, "Invalid input. please input a proper guessed value");
         //guess = Convert.ToInt32(usersGuests);
         numberOfguessed++;
 
@@ -69,4 +74,16 @@ for (int i = 0; i < int.MaxValue; i++)
         break;
     }
 
+}
+
+int ValidateInput(string? a, string message)
+{
+    int convertedValue = 0;
+    while (int.TryParse(a, out lowerBound) == false)
+    {
+        Console.WriteLine(message);
+        a = Console.ReadLine();
+
+    }
+    return convertedValue;
 }
