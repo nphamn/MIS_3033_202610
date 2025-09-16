@@ -1,0 +1,21 @@
+﻿<Window x:Class="Intro_to_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Intro_to_WPF"
+        mc:Ignorable="d"
+        Title="My First WPF" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="https://ou.edu/content/dam/campus_photos/material/cards/Evans-East-Sunset.jpg"></ImageBrush>
+        </Grid.Background>
+        <TextBox x:Name="txtName" HorizontalAlignment="Center" Margin="0,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" Height="37"/>
+        <TextBox x:Name="txtAge" HorizontalAlignment="Center" Margin="0,157,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="132" Height="37"/>
+        <Button x:Name="btnGo" Content="Go" HorizontalAlignment="Left" Margin="297,227,0,0" VerticalAlignment="Top" Height="80" Width="188" Click="Button_Click" MouseEnter="Button_MouseEnter" MouseLeave="btnGo_MouseLeave"/>
+        <Label x:Name="lblName" Content="Enter your name:" HorizontalAlignment="Left" Margin="163,95,0,0" VerticalAlignment="Top" Height="36" Width="144" Background="#B2FFFFFF"/>
+        <Label x:Name="lblAge" Content="Enter your age:" HorizontalAlignment="Left" Margin="163,158,0,0" VerticalAlignment="Top" Height="36" Width="144" Background="#B2FFFFFF"/>
+        <Label x:Name="lblOutput" Content="" HorizontalAlignment="Left" Margin="123,344,0,0" VerticalAlignment="Top" Height="62" Width="570" Background="#72FFFFFF"/>
+
+    </Grid>
+</Window>
