@@ -1,0 +1,32 @@
+﻿<Window x:Class="JSON_Game_of_Thrones_Quotes.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JSON_Game_of_Thrones_Quotes"
+        mc:Ignorable="d"
+        Title="Game of Thrones Quotes" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="https://cdn.theatlantic.com/thumbor/3OndfTbS_O0nHdLvnm_frPMf9zE=/19x44:1783x1036/976x549/media/img/mt/2017/08/51386b0621eef7fc2e482fe8f60097f80027c1fc1e8ced34176b4baf71abae94da983e277672f5df6b824d550edac9c2/original.jpg"/>
+        </Grid.Background>
+        <ListBox  Margin="540,36,51,120">
+            <ListBox.Background>
+                <SolidColorBrush Color="White" Opacity="0.3"/>
+            </ListBox.Background>
+        </ListBox>
+        <Button x:Name="btnSave" Content="Button" HorizontalAlignment="Left" Margin="98,348,0,0" VerticalAlignment="Top" Height="38" Click="SaveQuotesButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="https://toppng.com/uploads/preview/file-save-icon-vector-11563149077xoobqgozjt.png"/>
+            </Button.Background>
+        </Button>
+
+        <TextBlock x:Name="tbQuote" HorizontalAlignment="Left" Margin="98,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="101" Width="343" Background="#9904979D" Foreground="White" TextAlignment="Center" />
+
+        <Button x:Name="btnRefresh" HorizontalAlignment="Left" Margin="517,349,0,0" VerticalAlignment="Top" Height="63" Width="70" Click="GetRandomQuoteButton_Click">
+            <Image Source="https://cdn1.iconfinder.com/data/icons/vibrancie-action/30/action_011-sync-fetch-arrow-update-512.png" Stretch="Uniform" />
+
+        </Button>
+
+    </Grid>
+</Window>

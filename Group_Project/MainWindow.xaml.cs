@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using System.Text;
+﻿using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -9,25 +8,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
-namespace Intro_to_JSON
+namespace Group_Project
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<string> ramen_rating = new List<string>();
         public MainWindow()
         {
             InitializeComponent();
-
-            string fileAsJson = File.ReadAllText("MOCK_DATA.json");
-
-            List<Employee> employees = JsonConvert.DeserializeObject<List<Employee>>(fileAsJson);
-
-            lstData itemsSource = employees;
-
-            string cSharpAsJson = JsonConvert.SerializeObject(employees, Formatting.Indented);
+            string[] ramens = File.ReadAllLines("ramen-ratings.csv");
         }
     }
 }
