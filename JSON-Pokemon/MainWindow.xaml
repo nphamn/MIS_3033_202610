@@ -1,0 +1,39 @@
+﻿<Window x:Class="JSON_Pokemon.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JSON_Pokemon"
+        mc:Ignorable="d"
+        Title="Pokémon Viewer" Height="450" Width="600">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="SkyBlue" Offset="0" />
+                <GradientStop Color="MidnightBlue" Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <!-- Pokémon ListBox -->
+        <ListBox Name="PokemonListBox" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="276" Height="300" 
+                 SelectionChanged="PokemonListBox_SelectionChanged" FontSize="14">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <!-- Display the 'Name' property of each PokemonListItem -->
+                    <TextBlock Text="{Binding name}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!-- Pokémon Details (Height, Weight, Image) -->
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="344,10,0,0">
+            <TextBlock Name="PokemonNameText" FontSize="20" FontWeight="Bold" Margin="0,0,0,10" />
+            <TextBlock Name="PokemonHeightText" FontSize="16" Margin="0,0,0,5" />
+            <TextBlock Name="PokemonWeightText" FontSize="16" Margin="0,0,0,10" />
+
+            <Image Name="PokemonSpriteImage" Width="200" Height="200" Margin="0,0,0,10" />
+
+            <Button Content="Toggle Sprite" Width="100" Height="30" HorizontalAlignment="Center" Click="ToggleSpriteButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
